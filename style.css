@@ -84,7 +84,18 @@ h1, h2, h3, h4, .logo, .hero-title {
 
 .more_info{
     text-align: center;
-    padding: 1rem;
+    margin-top: auto;
+    padding: 1rem 0;
+}
+.e{
+    margin-top: 2rem;
+}
+
+.d{
+    margin-top: 3.2rem;   
+}
+.b{
+    margin-top: 2.5rem;
 }
 
 .btn-primary:hover {
