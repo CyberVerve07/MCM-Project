@@ -519,6 +519,58 @@ section::before {
     gap: 0.9rem;
 }
 
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.bhm-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(13, 27, 47, 0.9);
+    color: var(--text-main);
+    min-width: 720px;
+}
+
+.bhm-table th,
+.bhm-table td {
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 0.85rem 0.9rem;
+    text-align: left;
+    font-size: 0.96rem;
+}
+
+.bhm-table th {
+    background: rgba(56, 189, 248, 0.16);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.bhm-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.bhm-table tfoot th,
+.bhm-table tfoot td {
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+    .info-section {
+        padding: 2rem 0.5rem;
+    }
+    .bhm-table {
+        min-width: 520px;
+    }
+}
+
 .course-title-wrapper {
     display: flex;
     align-items: center;
