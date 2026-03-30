@@ -710,6 +710,21 @@
             <p>&copy; 2026 MCM DAV College Kangra. All rights reserved.</p>
         </div>
     </footer>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.prospectus-form').forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    var msg = form.querySelector('#prospectus-message');
+                    if (!msg) return;
+                    msg.textContent = 'Thanku for apply';
+                    msg.style.opacity = '1';
+                    setTimeout(function () { msg.style.opacity = '0'; }, 2500);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
