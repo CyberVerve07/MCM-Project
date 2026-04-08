@@ -535,6 +535,18 @@ section::before {
     transition: opacity 0.2s ease-in-out;
 }
 
+.prospectus-message.success {
+    color: #0f5132;
+    background: rgba(198, 255, 221, 0.8);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.prospectus-message.error {
+    color: #842029;
+    background: rgba(255, 196, 196, 0.8);
+    border-color: rgba(220, 53, 69, 0.5);
+}
+
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

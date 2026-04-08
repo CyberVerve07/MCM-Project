@@ -684,6 +684,41 @@
         </div>
      </section>
 
+     <!-- Prospectus Apply Form -->
+     <section id="prospectus-apply" class="prospectus-apply section-padding">
+         <div class="container">
+             <div class="section-header">
+                 <h2>Prospectus <span class="gradient-text">Apply Form</span></h2>
+                 <p>Request your course prospectus by submitting the form below.</p>
+             </div>
+             <form action="#" method="post" class="prospectus-form">
+                 <div class="form-row">
+                     <label for="name">Full Name</label>
+                     <input type="text" id="name" name="name" placeholder="Your full name" required>
+                 </div>
+                 <div class="form-row">
+                     <label for="email">Email</label>
+                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                 </div>
+                 <div class="form-row">
+                     <label for="phone">Phone</label>
+                     <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                 </div>
+                 <div class="form-row">
+                     <label for="course">Course</label>
+                     <input type="text" id="course" name="course" value="BHM" readonly>
+                 </div>
+                 <div class="form-row">
+                     <label for="message">Message</label>
+                     <textarea id="message" name="message" placeholder="Any questions or comments" rows="3"></textarea>
+                 </div>
+                 <button type="submit" class="btn btn-primary">Apply for Prospectus</button>
+                 <div class="prospectus-message prospectus-message">&nbsp;</div>
+             </form>
+         </div>
+     </section>
+
+
      <!-- Footer -->
     <footer>
         <div class="container footer-content">
@@ -711,20 +746,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.prospectus-form').forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    var msg = form.querySelector('#prospectus-message');
-                    if (!msg) return;
-                    msg.textContent = 'Thanku for apply';
-                    msg.style.opacity = '1';
-                    setTimeout(function () { msg.style.opacity = '0'; }, 2500);
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
