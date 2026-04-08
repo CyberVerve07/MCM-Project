@@ -657,7 +657,7 @@
                  <h2>Prospectus <span class="gradient-text">Apply Form</span></h2>
                  <p>Request your course prospectus by submitting the form below.</p>
              </div>
-             <form action="mailto:info@mcmdavkangra.ac.in" method="post" enctype="text/plain" class="prospectus-form">
+             <form action="#" method="post" class="prospectus-form">
                  <div class="form-row">
                      <label for="name">Full Name</label>
                      <input type="text" id="name" name="name" placeholder="Your full name" required>
@@ -679,7 +679,7 @@
                      <textarea id="message" name="message" placeholder="Any questions or comments" rows="3"></textarea>
                  </div>
                  <button type="submit" class="btn btn-primary">Apply for Prospectus</button>
-                 <div id="prospectus-message" class="prospectus-message">&nbsp;</div>
+                 <div class="prospectus-message prospectus-message">&nbsp;</div>
              </form>
          </div>
      </section>
@@ -711,20 +711,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.prospectus-form').forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    var msg = form.querySelector('#prospectus-message');
-                    if (!msg) return;
-                    msg.textContent = 'Thanku for apply';
-                    msg.style.opacity = '1';
-                    setTimeout(function () { msg.style.opacity = '0'; }, 2500);
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
