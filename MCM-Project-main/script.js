@@ -88,26 +88,26 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                var fullName = form.querySelector('[name="fullName"]').value.trim();
+                var name = (form.querySelector('[name="fullName"]') || form.querySelector('[name="name"]')).value.trim();
                 var email = form.querySelector('[name="email"]').value.trim();
                 var phone = form.querySelector('[name="phone"]').value.trim();
-                var address = form.querySelector('[name="address"]').value.trim();
-                var courseInterest = form.querySelector('[name="courseInterest"]').value;
-                var deliveryMethod = form.querySelector('[name="deliveryMethod"]').value;
+                var address = (form.querySelector('[name="address"]') || {value: ''}).value.trim();
+                var course = (form.querySelector('[name="courseInterest"]') || form.querySelector('[name="course"]')).value;
+                var deliveryMethod = (form.querySelector('[name="deliveryMethod"]') || {value: ''}).value;
                 var message = form.querySelector('[name="message"]').value.trim();
                 var statusEl = form.querySelector('.prospectus-message') || createMessageElement(form);
 
-                if (!fullName || !email || !phone || !deliveryMethod) {
+                if (!name || !email || !phone) {
                     showMessage(statusEl, 'Please fill in all required fields.', true);
                     return;
                 }
 
                 var application = {
-                    fullName: fullName,
+                    name: name,
                     email: email,
                     phone: phone,
                     address: address,
-                    courseInterest: courseInterest,
+                    course: course,
                     deliveryMethod: deliveryMethod,
                     message: message,
                     createdAt: new Date().toISOString()
