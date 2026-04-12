@@ -88,14 +88,16 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                var name = form.querySelector('[name="name"]').value.trim();
+                var name = (form.querySelector('[name="fullName"]') || form.querySelector('[name="name"]')).value.trim();
                 var email = form.querySelector('[name="email"]').value.trim();
                 var phone = form.querySelector('[name="phone"]').value.trim();
-                var course = form.querySelector('[name="course"]').value.trim();
+                var address = (form.querySelector('[name="address"]') || {value: ''}).value.trim();
+                var course = (form.querySelector('[name="courseInterest"]') || form.querySelector('[name="course"]')).value;
+                var deliveryMethod = (form.querySelector('[name="deliveryMethod"]') || {value: ''}).value;
                 var message = form.querySelector('[name="message"]').value.trim();
-                var statusEl = form.querySelector('.prospectus-message');
+                var statusEl = form.querySelector('.prospectus-message') || createMessageElement(form);
 
-                if (!name || !email || !phone || !course) {
+                if (!name || !email || !phone) {
                     showMessage(statusEl, 'Please fill in all required fields.', true);
                     return;
                 }
@@ -104,7 +106,9 @@
                     name: name,
                     email: email,
                     phone: phone,
+                    address: address,
                     course: course,
+                    deliveryMethod: deliveryMethod,
                     message: message,
                     createdAt: new Date().toISOString()
                 };
@@ -112,15 +116,21 @@
                 addApplication(application)
                     .then(function () {
                         form.reset();
-                        form.querySelector('[name="course"]').value = course; // preserve course field on reset
-                        showMessage(statusEl, 'Application received and saved successfully.', false);
+                        showMessage(statusEl, 'Application submitted successfully! We will contact you within 2-3 business days.', false);
                     })
                     .catch(function (error) {
                         console.error('DB save error:', error);
-                        showMessage(statusEl, 'Could not save application. Please try again later.', true);
+                        showMessage(statusEl, 'Could not submit application. Please try again later.', true);
                     });
             });
         });
+    }
+
+    function createMessageElement(form) {
+        var messageEl = document.createElement('div');
+        messageEl.className = 'prospectus-message';
+        form.appendChild(messageEl);
+        return messageEl;
     }
 
     function renderApplicationsList() {
