@@ -88,16 +88,7 @@
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                var fullName = form.querySelector('[name="fullName"]').value.trim();
-                var email = form.querySelector('[name="email"]').value.trim();
-                var phone = form.querySelector('[name="phone"]').value.trim();
-                var address = form.querySelector('[name="address"]').value.trim();
-                var courseInterest = form.querySelector('[name="courseInterest"]').value;
-                var deliveryMethod = form.querySelector('[name="deliveryMethod"]').value;
-                var message = form.querySelector('[name="message"]').value.trim();
-                var statusEl = form.querySelector('.prospectus-message') || createMessageElement(form);
 
-                if (!fullName || !email || !phone || !deliveryMethod) {
                     showMessage(statusEl, 'Please fill in all required fields.', true);
                     return;
                 }
@@ -107,7 +98,7 @@
                     email: email,
                     phone: phone,
                     address: address,
-                    courseInterest: courseInterest,
+
                     deliveryMethod: deliveryMethod,
                     message: message,
                     createdAt: new Date().toISOString()
