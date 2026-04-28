@@ -208,7 +208,9 @@ section::before {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -219,11 +221,26 @@ section::before {
     transition: var(--transition);
     position: relative;
     letter-spacing: 0.3px;
-}}
+}
 
 .nav-links a:hover,
 .nav-links a.active {
     color: #3b82f6;
+}
+
+.nav-cta {
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+}
+
+.nav-cta.btn-outline {
+    background: rgba(59, 130, 246, 0.08);
+    color: #1e3a8a;
+}
+
+.nav-cta.btn-primary {
+    padding: 0.75rem 1.2rem;
 }
 
 .nav-links a::after {
@@ -508,10 +525,19 @@ section::before {
     box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
 }
 
+.facility-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(209, 213, 219, 0.65);
+}
+
 .facility-icon {
     font-size: 3.5rem;
     color: var(--primary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .facility-card h3 {
@@ -901,47 +927,9 @@ section::before {
     border: 1px solid rgba(14, 165, 233, 0.15);
 }
 
-.bhm-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #ffffff;
-    color: #1f2937;
-    min-width: 720px;
-}
-
-.bhm-table th,
-.bhm-table td {
-    border: 1px solid rgba(209, 213, 219, 0.5);
-    padding: 0.85rem 0.9rem;
-    text-align: left;
-    font-size: 0.96rem;
-}
-
-.bhm-table th {
-    background: #3b82f6;
-    color: #ffffff;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    padding: 1rem 0.9rem;
-}
-
-.bhm-table tbody tr:hover {
-    background: rgba(14, 165, 233, 0.05);
-}
-
-.bhm-table tfoot th,
-.bhm-table tfoot td {
-    border-top: 1px solid rgba(209, 213, 219, 0.5);
-    font-weight: 700;
-    background: rgba(14, 165, 233, 0.05);
-}
-
 @media (max-width: 768px) {
     .info-section {
         padding: 2rem 0.5rem;
-    }
-    .bhm-table {
-        min-width: 520px;
     }
 }
 
@@ -1226,7 +1214,8 @@ section::before {
     border: 1px solid rgba(14, 165, 233, 0.15);
 }
 
-.data-table {
+.data-table,
+.tt {
     width: 100%;
     border-collapse: collapse;
     min-width: 720px;
@@ -1234,30 +1223,37 @@ section::before {
 }
 
 .data-table th,
-.data-table td {
+.data-table td,
+.tt th,
+.tt td {
     padding: 0.95rem 1rem;
     border-bottom: 1px solid rgba(209, 213, 219, 0.3);
     text-align: left;
 }
 
-.data-table th {
+.data-table th,
+.tt th {
     background: rgba(59, 130, 246, 0.1);
     color: #1e40af;
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
 }
 
-.data-table td {
+.data-table td,
+.tt td {
     color: #6b7280;
     font-size: 0.95rem;
 }
 
-.data-table tr:hover td {
+.data-table tr:hover td,
+.tt tr:hover td {
     background: rgba(14, 165, 233, 0.03);
 }
 
 .data-table td:first-child,
-.data-table th:first-child {
+.data-table th:first-child,
+.tt td:first-child,
+.tt th:first-child {
     white-space: nowrap;
 }
 
@@ -1378,15 +1374,6 @@ footer {
     font-size: 1.3rem;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid #4b5563;
-    color: #a3adb8;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
 @media (max-width: 768px) {
     .section-padding {
         padding: 4rem 0;
@@ -1472,105 +1459,6 @@ footer {
     }
 }
 
-/* BCA Page */
 
 
-/* sem */
-.marksheet{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.sem{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    padding: 30px 20px;
-    margin: 0;
-}
-.semester{
-    margin-bottom: 3rem;       
-}
-
-/* table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid #0284c7;
-}
-
-th, td {
-    border: 1px solid #0284c7;
-    padding: 10px;
-    text-align: left;
-    font-size: 15px;
-}
-.total-row {
-    font-weight: bold;
-}
-
-.total-row td:first-child {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* programme structure */
-.programme-structure {
-    display: flex;
-    justify-content: center;
-    margin: 3rem 0;
-}
-.programme-structure .fee-container {
-    width: 100%;
-    max-width: 1100px;
-}
-.programme-structure .table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-.programme-structure .table-container h3 {
-    width: 100%;
-    text-align: center;
-    color: var(--primary-light);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-.programme-structure .table-container table {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-/* fee-structure */
-.fee-structure{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 3rem;   
-    margin-top: 3rem;
-}
-.fee{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    padding: 30px 20px;
-    margin: 0;
-    font-size: 2rem;
-}
-.fe{
-    border-radius: 1%;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-.gradient-text {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.tt{
-    border: 2px solid #0284c7;
-}
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MCM DAV College Kangra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/images.png" alt="college logo" class="logo-image">
+                 MCM DAV College
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="prospectus.html">Prospectus</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="fee-structure.html">Fee Structure</a>
+                <a href="login.html" class="nav-cta btn-outline">Login</a>
+                <a href="register.html" class="nav-cta btn-primary">Register</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="prospectus.html" class="mobile-link">Prospectus</a>
+        <a href="facilities.html" class="mobile-link">Facilities</a>
+        <a href="fee-structure.html" class="mobile-link">Fee Structure</a>
+        <a href="login.html" class="mobile-link">Login</a>
+        <a href="register.html" class="mobile-link">Register</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">College Portal Access</span>
+            <h1 class="hero-title">Login to <span class="gradient-text">Student Services</span></h1>
+            <p class="hero-subtitle">Access the student portal for admission updates, application status, and campus resources.</p>
+            <div class="hero-buttons">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                <a href="register.html" class="btn btn-outline">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Login</h2>
+                <p>Enter your credentials below to continue to your student dashboard.</p>
+            </div>
+            <div class="prospectus-apply">
+                <form class="prospectus-form" data-form-type="login" action="#" method="post">
+                    <div class="form-row">
+                        <label for="username">Email or Username *</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your email or username" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <p class="form-note">New user? <a href="register.html">Register here</a> or contact admissions at <a href="mailto:admissions@mcmdavcollege.edu">admissions@mcmdavcollege.edu</a>.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

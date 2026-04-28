@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MCM DAV College Kangra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/images.png" alt="college logo" class="logo-image">
+                 MCM DAV College
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="prospectus.html">Prospectus</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="fee-structure.html">Fee Structure</a>
+                <a href="login.html" class="nav-cta btn-outline">Login</a>
+                <a href="register.html" class="nav-cta btn-primary">Register</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="prospectus.html" class="mobile-link">Prospectus</a>
+        <a href="facilities.html" class="mobile-link">Facilities</a>
+        <a href="fee-structure.html" class="mobile-link">Fee Structure</a>
+        <a href="login.html" class="mobile-link">Login</a>
+        <a href="register.html" class="mobile-link">Register</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Start Your Admission</span>
+            <h1 class="hero-title">Register for <span class="gradient-text">MCM DAV College</span></h1>
+            <p class="hero-subtitle">Create your student account to access admissions information, application status, and campus updates.</p>
+            <div class="hero-buttons">
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                <a href="login.html" class="btn btn-outline">Already have an account?</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Create Your Account</h2>
+                <p>Complete the registration form below and start your admission journey.</p>
+            </div>
+            <div class="prospectus-apply">
+                <form class="prospectus-form" data-form-type="register" action="#" method="post">
+                    <div class="form-row">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <p class="form-note">Already registered? <a href="login.html">Login here</a>.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

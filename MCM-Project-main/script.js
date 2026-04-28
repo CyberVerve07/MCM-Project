@@ -47,6 +47,38 @@
         });
     }
 
+    function getRegisteredUsers() {
+        var stored = localStorage.getItem('registeredUsers');
+        return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveRegisteredUsers(users) {
+        localStorage.setItem('registeredUsers', JSON.stringify(users));
+    }
+
+    function registerUser(user) {
+        var users = getRegisteredUsers();
+        var existing = users.find(function (item) {
+            return item.email.toLowerCase() === user.email.toLowerCase();
+        });
+
+        if (existing) {
+            return false;
+        }
+
+        users.push(user);
+        saveRegisteredUsers(users);
+        return true;
+    }
+
+    function findRegisteredUser(username) {
+        var users = getRegisteredUsers();
+        var key = username.trim().toLowerCase();
+        return users.find(function (user) {
+            return user.email.toLowerCase() === key || user.fullName.toLowerCase() === key;
+        });
+    }
+
     function getApplications() {
         return openDatabase().then(function (db) {
             return new Promise(function (resolve, reject) {
@@ -87,6 +119,68 @@
         document.querySelectorAll('.prospectus-form').forEach(function (form) {
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
+                var type = form.dataset.formType || 'prospectus';
+                var statusEl = form.querySelector('.prospectus-message') || createMessageElement(form);
+
+                if (type === 'login') {
+                    var username = form.querySelector('[name="username"]').value.trim();
+                    var password = form.querySelector('[name="password"]').value.trim();
+
+                    if (!username || !password) {
+                        showMessage(statusEl, 'Please enter both username and password.', true);
+                        return;
+                    }
+
+                    var registeredUser = findRegisteredUser(username);
+                    if (!registeredUser) {
+                        showMessage(statusEl, 'No id register', true);
+                        return;
+                    }
+
+                    if (registeredUser.password !== password) {
+                        showMessage(statusEl, 'Incorrect password. Please try again.', true);
+                        return;
+                    }
+
+                    form.reset();
+                    showMessage(statusEl, 'Login successful. Welcome back!', false);
+                    return;
+                }
+
+                if (type === 'register') {
+                    var fullName = form.querySelector('[name="fullName"]').value.trim();
+                    var email = form.querySelector('[name="email"]').value.trim();
+                    var phone = form.querySelector('[name="phone"]').value.trim();
+                    var password = form.querySelector('[name="password"]').value.trim();
+                    var confirmPassword = form.querySelector('[name="confirmPassword"]').value.trim();
+
+                    if (!fullName || !email || !phone || !password || !confirmPassword) {
+                        showMessage(statusEl, 'Please fill in all required fields.', true);
+                        return;
+                    }
+
+                    if (password !== confirmPassword) {
+                        showMessage(statusEl, 'Passwords do not match. Please check and try again.', true);
+                        return;
+                    }
+
+                    var registered = registerUser({
+                        fullName: fullName,
+                        email: email,
+                        phone: phone,
+                        password: password,
+                        createdAt: new Date().toISOString()
+                    });
+
+                    if (!registered) {
+                        showMessage(statusEl, 'This email is already registered.', true);
+                        return;
+                    }
+
+                    form.reset();
+                    showMessage(statusEl, 'Thank you for registering! Your account has been created.', false);
+                    return;
+                }
 
                 var name = (form.querySelector('[name="fullName"]') || form.querySelector('[name="name"]')).value.trim();
                 var email = form.querySelector('[name="email"]').value.trim();
@@ -94,8 +188,7 @@
                 var address = (form.querySelector('[name="address"]') || {value: ''}).value.trim();
                 var course = (form.querySelector('[name="courseInterest"]') || form.querySelector('[name="course"]')).value;
                 var deliveryMethod = (form.querySelector('[name="deliveryMethod"]') || {value: ''}).value;
-                var message = form.querySelector('[name="message"]').value.trim();
-                var statusEl = form.querySelector('.prospectus-message') || createMessageElement(form);
+                var message = (form.querySelector('[name="message"]') || {value: ''}).value.trim();
 
                 if (!name || !email || !phone) {
                     showMessage(statusEl, 'Please fill in all required fields.', true);
