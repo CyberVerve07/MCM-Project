@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Prospectus Applications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Saved Prospectus <span class="gradient-text">Applications</span></h1>
+            <p>All prospectus applications stored in IndexedDB.</p>
+            <a href="index.html" class="btn btn-outline mt-3">Back to Home</a>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="table-wrapper">
+                <table class="tt">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Course</th>
+                            <th>Applied On</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applications-table-body">
+                        <tr><td colspan="6" style="text-align:center;">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
