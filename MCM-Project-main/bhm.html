@@ -3,27 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bhm page</title>
+    <title>BHM - MCM DAV College Kangra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
 
-        <!-- nav _bar -->
-         <nav class="navbar" id="navbar">
-             <div class="nav-container">
-                <a href="#" class="logo">
-                    <img src="images/images.png" alt="college logo" class="logo-image" >
-                     MCM DAV College 
-                </a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="#fees">Fee Structure</a>
-                    <a href="login.html" class="nav-cta btn-outline">Login</a>
-                </div>
-             </div>
-         </nav>      
-     </header>  
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/images.png" alt="college logo" class="logo-image" >
+                 MCM DAV College 
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="prospectus.html">Prospectus</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="index.html#courses">Courses</a>
+                <a href="fee-structure.html">Fees</a>
+                <a href="login.html" class="btn-login">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="prospectus.html" class="mobile-link">Prospectus</a>
+        <a href="facilities.html" class="mobile-link">Facilities</a>
+        <a href="index.html#courses" class="mobile-link">Courses & Eligibility</a>
+        <a href="fee-structure.html" class="mobile-link">Fee Structure</a>
+        <a href="login.html" class="mobile-link">Login</a>
+    </div>  
 
      <section class="hero">
         <div class="hero-content">
@@ -633,8 +653,8 @@
      </section>
 
      <!-- fee structure -->
-     <tion class="info-section" id="fees">
-        sec<div class="container">
+     <section class="info-section" id="fees">
+        <div class="container">
             <div class="section-header">
                 <h2>BHM Fee Structure (Installments)</h2>
                 <p>By class (BHM only) with 1st, 2nd, and 3rd installment amounts.</p>

@@ -10,22 +10,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-     <header>
-        <!-- nav _bar -->
-         <nav class="navbar" id="navbar">
-             <div class="nav-container">
-                <a href="index.html" class="logo">
-                    <img src="images/images.png" alt="college logo" class="logo-image" >
-                     MCM DAV College
-                </a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="login.html" class="nav-cta btn-outline">Login</a>
-                </div>
-             </div>
-         </nav>
-     </header>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/images.png" alt="college logo" class="logo-image" >
+                 MCM DAV College 
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="prospectus.html">Prospectus</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="index.html#courses">Courses</a>
+                <a href="fee-structure.html">Fees</a>
+                <a href="login.html" class="btn-login">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="prospectus.html" class="mobile-link">Prospectus</a>
+        <a href="facilities.html" class="mobile-link">Facilities</a>
+        <a href="index.html#courses" class="mobile-link">Courses & Eligibility</a>
+        <a href="fee-structure.html" class="mobile-link">Fee Structure</a>
+        <a href="login.html" class="mobile-link">Login</a>
+    </div>
 
      <section class="hero">
         <div class="hero-content">
