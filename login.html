@@ -21,9 +21,8 @@
                 <a href="index.html">Home</a>
                 <a href="prospectus.html">Prospectus</a>
                 <a href="facilities.html">Facilities</a>
-                <a href="fee-structure.html">Fee Structure</a>
-                <a href="login.html" class="nav-cta btn-outline">Login</a>
-                <a href="register.html" class="nav-cta btn-primary">Register</a>
+                <a href="fee-structure.html">Fees</a>
+                <a href="login.html" class="btn-login">Login <i class="fa-solid fa-right-to-bracket"></i></a>
             </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fa-solid fa-bars"></i>
@@ -41,13 +40,26 @@
     </div>
 
     <section class="hero">
-        <div class="hero-content">
-            <span class="badge">College Portal Access</span>
-            <h1 class="hero-title">Login to <span class="gradient-text">Student Services</span></h1>
-            <p class="hero-subtitle">Access the student portal for admission updates, application status, and campus resources.</p>
-            <div class="hero-buttons">
-                <a href="index.html" class="btn btn-secondary">Back to Home</a>
-                <a href="register.html" class="btn btn-outline">Register Now</a>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Student Portal Access</span>
+                <h1 class="hero-title">Welcome to <span class="gradient-text">Student Dashboard</span></h1>
+                <p class="hero-subtitle">Securely access your academic profile, fee records, and examination status. Your gateway to a digital campus experience.</p>
+                <div class="hero-buttons">
+                    <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+                    <a href="register.html" class="btn btn-primary">Create Account <i class="fa-solid fa-user-plus"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="fee-visual-card">
+                    <img src="assets/images/login-visual.png" alt="Login Portal Visual" class="fee-hero-img">
+                    <div class="glass-overlay"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -55,21 +67,26 @@
     <section class="info-section">
         <div class="container">
             <div class="section-header">
-                <h2>Student Login</h2>
-                <p>Enter your credentials below to continue to your student dashboard.</p>
+                <h2>Student Sign In</h2>
+                <p>Please enter your authorized credentials to continue.</p>
             </div>
             <div class="prospectus-apply">
                 <form class="prospectus-form" data-form-type="login" action="#" method="post">
                     <div class="form-row">
-                        <label for="username">Email or Username *</label>
+                        <label for="username"><i class="fa-solid fa-envelope"></i> Email or Username *</label>
                         <input type="text" id="username" name="username" placeholder="Enter your email or username" required>
                     </div>
                     <div class="form-row">
-                        <label for="password">Password *</label>
+                        <label for="password"><i class="fa-solid fa-lock"></i> Password *</label>
                         <input type="password" id="password" name="password" placeholder="Enter your password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <p class="form-note">New user? <a href="register.html">Register here</a> or contact admissions at <a href="mailto:admissions@mcmdavcollege.edu">admissions@mcmdavcollege.edu</a>.</p>
+                    <div class="form-row" style="margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In to Dashboard <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <p class="form-note" style="text-align: center; margin-top: 1.5rem; color: var(--text-muted);">
+                        New student? <a href="register.html" style="color: var(--primary); font-weight: 700;">Register here</a><br>
+                        Forgot password? <a href="#" style="color: var(--primary); font-weight: 700;">Reset it now</a>
+                    </p>
                 </form>
             </div>
         </div>
