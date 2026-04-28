@@ -317,7 +317,7 @@ section::before {
     padding: 6rem 1.5rem 2rem;
     text-align: center;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(59, 130, 246, 0.14), rgba(14, 165, 233, 0.08));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
 }
 
 .hero::before {
@@ -379,7 +379,7 @@ section::before {
 }
 
 .badge {
-    background: rgba(59, 130, 246, 0.12);
+    background: rgba(255, 255, 255, 0.9);
     color: #1e40af;
     padding: 0.6rem 1.2rem;
     border-radius: 2rem;
@@ -387,26 +387,27 @@ section::before {
     font-weight: 700;
     display: inline-block;
     margin-bottom: 1.5rem;
-    border: 2px solid #7c8fa6;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
     font-size: clamp(2.8rem, 5vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 800;
-    color: #1f2937;
+    color: #ffffff;
 }
 
 .hero-subtitle {
     font-size: clamp(1.05rem, 2vw, 1.35rem);
-    color: #374151;
+    color: #f3f4f6;
     margin-bottom: 2rem;
     max-width: 600px;
     margin-inline: auto;
     font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-buttons {
