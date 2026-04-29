@@ -469,7 +469,7 @@ section::before {
     height: 500px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     perspective: 1000px;
 }
 
@@ -580,7 +580,8 @@ section::before {
 }
 
 /* Split Hero Layout */
-.hero-split {
+.hero-split, 
+.hero-split-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -590,7 +591,7 @@ section::before {
 
 .hero-visual-content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -610,7 +611,8 @@ section::before {
     transform: perspective(1000px) rotateY(0deg) translateY(-10px);
 }
 
-.fee-hero-img {
+.fee-hero-img,
+.fee-image {
     width: 100%;
     height: auto;
     display: block;

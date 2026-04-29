@@ -133,7 +133,7 @@
 
                     var registeredUser = findRegisteredUser(username);
                     if (!registeredUser) {
-                        showMessage(statusEl, 'No id register', true);
+                        showMessage(statusEl, 'No account found with this email/username. Please register first.', true);
                         return;
                     }
 
